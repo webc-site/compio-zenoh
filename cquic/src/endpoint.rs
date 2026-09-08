@@ -9,7 +9,6 @@ use std::{
 };
 
 use bytes::Bytes;
-use bytes::Bytes;
 use compio::{BufResult, net::UdpSocket, runtime::spawn, time::timeout};
 use crossfire::{
   AsyncRx, MAsyncTx, TrySendError,
@@ -23,9 +22,7 @@ use crate::{
     PING_INTERVAL, RTO_INIT, RTO_MAX, SendCmd, deliver_reliable, enqueue_reliable,
   },
   error::{Error, Result},
-  frame::{
-    Frame, HANDSHAKE_CID, MAX_DATAGRAM_SIZE, OutPacket, decode_packet, encode_packet,
-  },
+  frame::{Frame, HANDSHAKE_CID, MAX_DATAGRAM_SIZE, OutPacket, decode_packet, encode_packet},
 };
 
 /// accept 队列容量（无 acceptor 时新握手将被丢弃，客户端可重试）
