@@ -6,24 +6,45 @@ license = "MulanPSL-2.0"
 repository = "https://github.com/webc-site/compio-zenoh.git"
 homepage = "https://github.com/webc-site/compio-zenoh/tree/main/compio-zenoh"
 description = "compio-zenoh"
-keywords = []
-categories = []
-
-[features]
-default = []
+keywords = [ ]
+categories = [ ]
 
 [package.metadata.docs.rs]
 all-features = true
-rustdoc-args = ["--cfg", "docsrs"]
+rustdoc-args = [ "--cfg", "docsrs" ]
+
+[features]
+default = [ ]
 
 [dependencies]
 thiserror = "2.0.20"
+crossfire = "3.1.20"
+fastrand = "2.5.0"
+log = "0.4.34"
+parking_lot = "0.12.5"
+zenoh-protocol = "1.10.1"
+zenoh-codec = "1.10.1"
+zenoh-buffers = "1.10.1"
+
+[dependencies.compio]
+version = "0.19.2"
+features = [ "net", "runtime", "macros", "time", "bytes" ]
+
+[dependencies.wedb_quic]
+path = "../cquic"
+version = "0.1.0"
 
 [dev-dependencies]
 aok = "0.1.18"
 ctor = "1.0.13"
 log = "0.4.34"
 log_init = "0.1.39"
+futures = "0.3.34"
+
+[dev-dependencies.zenoh]
+version = "1.10.1"
+default-features = false
+features = [ "transport_udp" ]
 
 [lints]
 workspace = true
