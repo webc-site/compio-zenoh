@@ -1,0 +1,42 @@
+[package]
+name = "wedb_quic"
+version = "0.1.0"
+edition = "2024"
+license = "MulanPSL-2.0"
+repository = "https://github.com/x-at-01/garnet_rust.git"
+homepage = "https://github.com/x-at-01/garnet_rust/tree/main/wedb_quic"
+description = "wedb_quic"
+keywords = []
+categories = []
+
+[features]
+default = []
+
+[package.metadata.docs.rs]
+all-features = true
+rustdoc-args = ["--cfg", "docsrs"]
+
+[dependencies]
+bitcode = "0.6.9"
+bytes = "1"
+compio = { version = "0.19.2", features = [
+  "net",
+  "runtime",
+  "macros",
+  "time",
+  "bytes",
+] }
+crossfire = "3.1.20"
+fastrand = "2.5.0"
+log = "0.4.34"
+parking_lot = "0.12.5"
+thiserror = "2.0.20"
+
+[dev-dependencies]
+aok = "0.1.18"
+ctor = "1.0.13"
+log = "0.4.34"
+log_init = "0.1.39"
+
+[lints]
+workspace = true
